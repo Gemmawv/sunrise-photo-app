@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: rgba(0, 179, 211, 0.897);
+  height: 150px;
+  padding: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.App-title {
+  color: white;
+}
+.App-subtitle {
+  color: white;
+}
+
+.button {
+  margin: 10px;
+}
