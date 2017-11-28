@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ImageIsFave from './ImageIsFave';
+import ImageIsNotFave from './ImageIsNotFave';
 import '../css/Image.css';
 import PropTypes from 'prop-types';
 
@@ -15,32 +17,19 @@ class Image extends React.Component {
   render() {
     return (
       this.state.isFave ?
-        <div className='box'>
-          <div className='Image-details'>
-            <div className='Image-title'>
-              <h1>{this.props.title}</h1>
-              <i className='fa fa-heart' aria-hidden='true'></i>
-            </div>
-            <a href={this.props.flickrLink} target='_blank'>
-              <img src={this.props.src} alt='sunrise' />
-            </a>
-          </div>
-          <div className='FavesButton'>
-            <button className='button is-danger' onClick={this.RemoveFaveStatus}>Remove from favourites</button>
-          </div>
-        </div>
+        <ImageIsFave
+          title={this.props.title}
+          flickrLink={this.props.flickrLink}
+          src={this.props.src}
+          removeFave={this.RemoveFaveStatus}
+        />
         :
-        <div className='box'>
-          <div className='Image details'>
-            <h1>{this.props.title}</h1>
-            <a href={this.props.flickrLink} target='_blank'>
-              <img src={this.props.src} alt='sunrise' />
-            </a>
-          </div>
-          <div className='FavesButton'>
-            <button className='button is-warning' onClick={this.AddFaveStatus}>Add to favourites</button>
-          </div>
-        </div>
+        <ImageIsNotFave
+          title={this.props.title}
+          flickrLink={this.props.flickrLink}
+          src={this.props.src}
+          addFave={this.AddFaveStatus}
+        />
     )
   }
 
@@ -52,7 +41,7 @@ class Image extends React.Component {
   }
 
   RemoveFaveStatus() {
-    this.props.removeFromFaves(this.props.imageDetails, this.props.id)
+    this.props.removeFromFaves(this.props.imageDetails)
     this.setState({
       isFave: false
     })
