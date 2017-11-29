@@ -22,8 +22,8 @@ class ImageList extends React.Component {
     return (
       <div className='image-list'>
         <div className='container'>
-          <button className='button is-link is-medium show-button' onClick={this.showAll}>Show all</button>
-          <button className='button is-link is-medium show-button' onClick={this.showFaves}>Show favourites</button>
+          <button className='button is-link is-medium is-outlined show-button' onClick={this.showAll}>Show all</button>
+          <button className='button is-link is-medium is-outlined show-button' onClick={this.showFaves}>Show favourites</button>
           {this.state.displayfaveImages ?
             this.state.faveImages.map((image, index) =>
               <div className='box' key={index}>
