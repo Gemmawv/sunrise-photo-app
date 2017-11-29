@@ -20,6 +20,7 @@ class Image extends React.Component {
           flickrLink={this.props.flickrLink}
           src={this.props.src}
           removeFave={this.removeFaveStatus}
+          key={this.props.id}
         />
         :
         <ImageIsNotFave
@@ -27,6 +28,7 @@ class Image extends React.Component {
           flickrLink={this.props.flickrLink}
           src={this.props.src}
           addFave={this.addFaveStatus}
+          key={this.props.id}
         />
     );
   }
@@ -45,6 +47,7 @@ Image.propTypes = {
   title: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   flickrLink: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   addToFaves: PropTypes.func.isRequired,
   removeFromFaves: PropTypes.func.isRequired,
   faves: PropTypes.array.isRequired

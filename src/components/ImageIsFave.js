@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 function ImageIsFave(props) {
   return (
-    <div className='box'>
-      <div className='Image-details'>
-        <div className='Image-title'>
+    <div className='image-box'>
+      <div className='image-details'>
+        <div className='image-title'>
           <h1>{props.title}</h1>
           <i className='fa fa-heart' aria-hidden='true'></i>
         </div>
         <a href={props.flickrLink} target='_blank'>
-          <img src={props.src} alt='sunrise' />
+          <img className='image-src' src={props.src} alt='sunrise' />
         </a>
       </div>
-      <div className='FavesButton'>
+      <div className='faves-button'>
         <button className='button is-danger' onClick={props.removeFave}>Remove from favourites</button>
       </div>
     </div>

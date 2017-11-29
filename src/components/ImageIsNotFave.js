@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 
 function ImageIsNotFave(props) {
   return (
-    <div className='box'>
-      <div className='Image details'>
-        <h1>{props.title}</h1>
+    <div className='image-box'>
+      <div className='image-details'>
+        <div className='image-title'>
+          <h1>{props.title}</h1>
+        </div>
         <a href={props.flickrLink} target='_blank'>
-          <img src={props.src} alt='sunrise' />
+          <img className='image-src' src={props.src} alt='sunrise' />
         </a>
       </div>
-      <div className='FavesButton'>
+      <div className='faves-button'>
         <button className='button is-warning' onClick={props.addFave}>Add to favourites</button>
       </div>
     </div>

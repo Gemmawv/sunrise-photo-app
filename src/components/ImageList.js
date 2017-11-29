@@ -20,35 +20,41 @@ class ImageList extends React.Component {
 
   render() {
     return (
-      <div className='ImageList'>
+      <div className='image-list'>
         <div className='container'>
-          <button className='button is-link is-medium' onClick={this.showAll}>Show all</button>
-          <button className='button is-link is-medium' onClick={this.showFaves}>Show favourites</button>
+          <button className='button is-link is-medium show-button' onClick={this.showAll}>Show all</button>
+          <button className='button is-link is-medium show-button' onClick={this.showFaves}>Show favourites</button>
           {this.state.displayfaveImages ?
             this.state.faveImages.map((image, index) =>
-              <Image
-                imageDetails={image}
-                title={image.title}
-                src={image.media.m}
-                flickrLink={image.link}
-                key={index}
-                addToFaves={this.addToFaves}
-                removeFromFaves={this.removeFromFaves}
-                faves={this.state.faveImages}
-              />
+              <div className='box' key={index}>
+                <Image
+                  imageDetails={image}
+                  title={image.title}
+                  src={image.media.m}
+                  flickrLink={image.link}
+                  key={index}
+                  id={index}
+                  addToFaves={this.addToFaves}
+                  removeFromFaves={this.removeFromFaves}
+                  faves={this.state.faveImages}
+                />
+              </div>
             )
             :
             this.state.allImages.map((image, index) =>
-              <Image
-                imageDetails={image}
-                title={image.title}
-                src={image.media.m}
-                flickrLink={image.link}
-                key={index}
-                addToFaves={this.addToFaves}
-                removeFromFaves={this.removeFromFaves}
-                faves={this.state.faveImages}
-              />
+              <div className='box' key={index}>
+                <Image
+                  imageDetails={image}
+                  title={image.title}
+                  src={image.media.m}
+                  flickrLink={image.link}
+                  key={index}
+                  id={index}
+                  addToFaves={this.addToFaves}
+                  removeFromFaves={this.removeFromFaves}
+                  faves={this.state.faveImages}
+                />
+              </div>
             )
           }
         </div>
