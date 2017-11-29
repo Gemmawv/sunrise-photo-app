@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ImageIsNotFave(props) {
   return (
@@ -13,7 +14,14 @@ function ImageIsNotFave(props) {
         <button className='button is-warning' onClick={props.addFave}>Add to favourites</button>
       </div>
     </div>
-  )
+  );
 }
+
+ImageIsNotFave.propTypes = {
+  title: PropTypes.string.isRequired,
+  flickrLink: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  addFave: PropTypes.func.isRequired
+};
 
 export default ImageIsNotFave;

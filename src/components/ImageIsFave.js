@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ImageIsFave(props) {
   return (
@@ -16,7 +17,14 @@ function ImageIsFave(props) {
         <button className='button is-danger' onClick={props.removeFave}>Remove from favourites</button>
       </div>
     </div>
-  )
+  );
 }
+
+ImageIsFave.propTypes = {
+  title: PropTypes.string.isRequired,
+  flickrLink: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  removeFave: PropTypes.func.isRequired
+};
 
 export default ImageIsFave;
