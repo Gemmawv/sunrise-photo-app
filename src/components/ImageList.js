@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars*/
+
 import React, { Component } from 'react';
 import Image from './Image';
 import photoData from '../data/photoData';
@@ -9,16 +11,14 @@ class ImageList extends React.Component {
       displayfaveImages: false,
       allImages: photoData.items,
       faveImages: []
-    }
+    };
     this.showAll = this.showAll.bind(this);
     this.showFaves = this.showFaves.bind(this);
     this.addToFaves = this.addToFaves.bind(this);
     this.removeFromFaves = this.removeFromFaves.bind(this);
-    this.isFave = this.isFave.bind(this);
-
   }
+
   render() {
-    console.log(this.state.faveImages)
     return (
       <div className='ImageList'>
         <div className='container'>
@@ -32,10 +32,9 @@ class ImageList extends React.Component {
                 src={image.media.m}
                 flickrLink={image.link}
                 key={index}
-                id={index}
                 addToFaves={this.addToFaves}
                 removeFromFaves={this.removeFromFaves}
-                isFave={this.isFave(image)}
+                faves={this.state.faveImages}
               />
             )
             :
@@ -46,10 +45,9 @@ class ImageList extends React.Component {
                 src={image.media.m}
                 flickrLink={image.link}
                 key={index}
-                id={index}
                 addToFaves={this.addToFaves}
                 removeFromFaves={this.removeFromFaves}
-                isFave={this.isFave(image)}
+                faves={this.state.faveImages}
               />
             )
           }
@@ -61,34 +59,28 @@ class ImageList extends React.Component {
   showAll() {
     this.setState({
       displayfaveImages: false
-    })
+    });
   }
 
   showFaves() {
     this.setState({
       displayfaveImages: true
-    })
-  }
-
-  isFave(item) {
-    item.isFave = item.isFave || false;
+    });
   }
 
   addToFaves(item) {
-    item.isFave = true;
     this.setState({
       faveImages: this.state.faveImages.concat(item)
-    })
+    });
   }
 
   removeFromFaves(item) {
-    item.isFave = false;
     let newFaves = this.state.faveImages.filter(image => {
-      return image.isFave === true;
-    })
+      return image !== item;
+    });
     this.setState({
       faveImages: newFaves
-    })
+    });
   }
 
 }
