@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ImageIsFave from './ImageIsFave';
 import ImageIsNotFave from './ImageIsNotFave';
-import '../css/Image.css';
 import PropTypes from 'prop-types';
 
 class Image extends React.Component {
@@ -10,8 +9,8 @@ class Image extends React.Component {
     this.state = {
       isFave: this.props.isFave
     }
-    this.AddFaveStatus = this.AddFaveStatus.bind(this)
-    this.RemoveFaveStatus = this.RemoveFaveStatus.bind(this)
+    this.addFaveStatus = this.addFaveStatus.bind(this)
+    this.removeFaveStatus = this.removeFaveStatus.bind(this)
   }
 
   render() {
@@ -21,26 +20,26 @@ class Image extends React.Component {
           title={this.props.title}
           flickrLink={this.props.flickrLink}
           src={this.props.src}
-          removeFave={this.RemoveFaveStatus}
+          removeFave={this.removeFaveStatus}
         />
         :
         <ImageIsNotFave
           title={this.props.title}
           flickrLink={this.props.flickrLink}
           src={this.props.src}
-          addFave={this.AddFaveStatus}
+          addFave={this.addFaveStatus}
         />
     )
   }
 
-  AddFaveStatus() {
+  addFaveStatus() {
     this.props.addToFaves(this.props.imageDetails)
     this.setState({
       isFave: true
     })
   }
 
-  RemoveFaveStatus() {
+  removeFaveStatus() {
     this.props.removeFromFaves(this.props.imageDetails)
     this.setState({
       isFave: false

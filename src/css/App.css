@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.App-footer {
+  background-color: grey;
+  height: 80px;
+  padding: 30px;
+  margin-top: 10px;
+  color: white;
+}
+
 .App-header {
   background-color: rgba(0, 179, 211, 0.897);
   height: 150px;
@@ -13,10 +21,15 @@
 .App-title {
   color: white;
 }
+
 .App-subtitle {
   color: white;
 }
 
 .button {
   margin: 10px;
+}
+
+.fa-heart {
+  color: red
 }
