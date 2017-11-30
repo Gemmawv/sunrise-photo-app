@@ -2,14 +2,13 @@
 
 import React, { Component } from 'react';
 import Image from './Image';
-import photoData from '../data/photoData';
 
 class ImageList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       displayfaveImages: false,
-      allImages: photoData.items,
+      allImages: this.props.photoData,
       faveImages: []
     };
     this.showAll = this.showAll.bind(this);
@@ -21,7 +20,7 @@ class ImageList extends React.Component {
   render() {
     return (
       <div className='image-list'>
-        <div className='container'>
+        <div className="container">
           <button className='button is-link is-medium is-outlined show-button' onClick={this.showAll}>Show all</button>
           <button className='button is-link is-medium is-outlined show-button' onClick={this.showFaves}>Show favourites</button>
           {this.state.displayfaveImages ?
