@@ -1,11 +1,11 @@
-## Sunrise photo finder
+## Sunrise Photo Finder
 
 ## Intro
-Sunrise photo finder is an application that allows you to select your favourite sunrise photos from a collection of 20 images. You can add and remove photos from your favourites. You can also choose to view all photos, or view favourites only.
+Sunrise Photo Finder is an application that allows you to select your favourite sunrise photos from a collection of 20 images. You can add and remove photos from your favourites. You can also choose to view all photos, or view favourites only.
 
 This application was built with React and Bulma. You can run this project locally by following the installation and setup instructions below.
 
-I chose to use React as it's component-based layout makes dealing with the logic for each part of an app really clear. It's also efficient as React will detect when data has changed but will only render the individual components that have changed, rather than the whole application. I've chosen to use more modern features, such as ES6 arrow functions and 'classes', rather than cater for older browsers. 
+I chose to use React as its component-based layout makes dealing with the logic for each part of an app really clear. It's also efficient as React will detect when data has changed but will only render the individual components that have changed, rather than the whole application. I've chosen to use more modern features, such as ES6 arrow functions and 'classes', rather than cater for older browsers. 
 
 To get the project up and running, I used 'create-react-app' as it comes with Webpack and Babel nicely preconfigured which allowed me to get started laying out components quickly.
 
