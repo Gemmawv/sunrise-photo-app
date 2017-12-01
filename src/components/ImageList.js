@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Image from './Image';
+import Spinner from './Spinner';
 
 class ImageList extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class ImageList extends React.Component {
       allImages: this.props.photoData,
       faveImages: []
     };
+    this.isLoading = this.isLoading.bind(this);
     this.showAll = this.showAll.bind(this);
     this.showFaves = this.showFaves.bind(this);
     this.addToFaves = this.addToFaves.bind(this);
@@ -19,6 +21,9 @@ class ImageList extends React.Component {
   }
 
   render() {
+    if (this.isLoading()) {
+      return <Spinner />;
+    }
     return (
       <div className='image-list'>
         <div className="container">
@@ -60,6 +65,12 @@ class ImageList extends React.Component {
         </div>
       </div>
     );
+  }
+
+
+  isLoading() {
+    if (this.state.allImages.length === 0) return true;
+    return false;
   }
 
   showAll() {
