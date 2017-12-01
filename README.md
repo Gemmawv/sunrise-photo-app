@@ -14,7 +14,7 @@ In terms of CSS, I decided to use Bulma, a CSS framework based on Flexbox. It's 
 ## Challenges
 To get the project up and running, I initially used 'create-react-app' as it comes with Webpack and Babel nicely preconfigured. However, I had some challenges getting access to the data from the Flickr API within my React components when using this setup. 
 
-Although frustrating, I decided to continue using hard-coded data instead in order to build out the app. I didn't have much time as I'd been determined to fix the data issue but I instead became determined to build out a fully functional Photo Finder app. 
+Although frustrating, I decided to continue using hard-coded data instead in order to build out the app. I didn't have much time as I'd been determined to fix the data issue but I focused on building the app and then went back to look at the data problem. 
 
 Ultimately, I found that there seemed to be an issue with the bundle.js created by create-react-app and so I re-built the project with a manual implementation of Webpack and Babel instead. This did fix the issue and allowed the app to access data from the Flickr API.
 
