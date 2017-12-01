@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars*/
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Image from './Image';
 
 class ImageList extends React.Component {
@@ -89,5 +90,9 @@ class ImageList extends React.Component {
   }
 
 }
+
+ImageList.propTypes = {
+  photoData: PropTypes.array.isRequired
+};
 
 export default ImageList;
