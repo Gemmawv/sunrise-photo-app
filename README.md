@@ -43,7 +43,7 @@ git clone https://github.com/Gemmawv/sunrise-photo-app
 npm install
 ```
 
-3. Finally, open another terminal, navigate into the project folder and run:
+3. Finally, to launch the app run:
 ``` javascript 
 npm start
 ```
