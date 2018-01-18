@@ -5,7 +5,7 @@ Sunrise Photo Finder is an application that allows you to select your favourite 
 
 This application was built with React, Webpack, Babel and Bulma. You can run this project locally by following the installation and setup instructions below.
 
-I chose to use React as its component-based layout makes dealing with the logic for each part of an app really clear. It's also efficient as React will detect when data has changed but will only render the individual components that have changed, rather than the whole application. I've chosen to use more modern features, such as ES6 arrow functions and 'classes', rather than focus on catering for older browsers. 
+I chose to use React as its component-based layout makes dealing with the logic for each part of an app really clear. It's also efficient as React will detect when data has changed but will only render the individual components that have changed, rather than the whole application. I've chosen to use more modern features, such as ES6 arrow functions and 'classes', rather than focus on catering for older browsers. Saying this, the use of Babel (see below) would take care of transpiling ES6 for older browsers but I wanted to stick with ES6 to be consistent.
 
 I've used Webpack to bundle my files into a single bundle.js file for the browser to access. I've also used Babel to translate JSX used in React to JavaScript so the browser can understand it.
 
